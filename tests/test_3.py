@@ -11,12 +11,12 @@ def test_step1():
     input1.send_keys("test")
     x_selector2 = '//*[@id="password"]'
     input2 = site.find_element("xpath", x_selector2)
-    input2.send_keys(" ")
+    input2.send_keys("test")
     btn_selector = "p:nth-child(3) > button"
     btn = site.find_element("css", btn_selector)
     btn.click()
-    x_selector3 = '/html/body/main/section/div/div/div/div[3]/div[1]/ul/li/strong'
+    x_selector3 = '/html/body/main/section/div/div/div/div[3]/div[1]/ul/li'
     err_label = site.find_element("xpath", x_selector3)
-    assert err_label.text == "ОШИБКА"
+    assert err_label.text == "Неизвестное имя пользователя. Перепроверьте или попробуйте ваш адрес email."
 
 test_step1()
